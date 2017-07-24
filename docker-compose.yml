@@ -21,6 +21,10 @@ services:
     image: monasca/agent-forwarder:master
     environment:
       NON_LOCAL_TRAFFIC: "true"
+      OS_AUTH_URL: "http://10.5.0.4:5000/v3"
+      MONASCA_URL: "http://10.5.0.12:8070/v2.0/"
+      DOCKER: "true"
+
 
   agent-collector:
     image: monasca/agent-collector:master
@@ -29,3 +33,6 @@ services:
       FORWARDER_URL: "http://agent-forwarder:17123"
       CADVISOR: "true"
       CADVISOR_URL: "http://cadvisor:8080/"
+      DOCKER: "true"
+      OS_AUTH_URL: "http://10.5.0.4:5000/v3"
+      MONASCA_URL: "http://10.5.0.12:8070/v2.0/"
