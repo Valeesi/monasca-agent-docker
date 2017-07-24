@@ -30,7 +30,7 @@ services:
     image: monasca/agent-collector:master
     environment:
 #      AGENT_HOSTNAME: "docker-host"
-#      FORWARDER_URL: "http://agent-forwarder:17123"
+      FORWARDER_URL: "http://agent-forwarder:17123"
 #      CADVISOR: "true"
 #      CADVISOR_URL: "http://cadvisor:8080/"
       DOCKER: "true"
