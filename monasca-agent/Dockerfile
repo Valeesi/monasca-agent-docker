@@ -10,9 +10,10 @@ ENV CONFIG_TEMPLATE=true \
   MONASCA_URL=http://10.5.0.12:8070/v2.0/ \
   LC_ALL=C
 
-RUN apt-get install python-pip && \
-    pip install --upgrade pip && \
-    pip install monasca-agent
+RUN apt-get update && \
+    apt-get install -y python-pip && \
+    pip install -y --upgrade pip && \
+    pip install -y monasca-agent==2.0.0
 
 COPY start.sh /
 
