@@ -15,4 +15,6 @@ RUN apt install python-pip \
     pip uninstall urllib3 -y \
     pip install urllib3==1.21.1 \
 
-CMD ["monasca-setup --username $OS_USERNAME --password $OS_PASSWORD --project_name $OS_PROJECT_NAME --keystone_url $OS_AUTH_URL --monasca_url $MONASCA_URL"]
+COPY start.sh /
+
+CMD ["/start.sh"]
