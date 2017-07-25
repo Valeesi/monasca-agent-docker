@@ -1,4 +1,4 @@
-FROM alpine:3.5
+FROM ubuntu:16.04
 
 ENV CONFIG_TEMPLATE=true \
   OS_AUTH_URL=http://10.5.0.4:5000/v3 \
