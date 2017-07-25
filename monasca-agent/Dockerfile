@@ -21,8 +21,9 @@ ENV CONFIG_TEMPLATE=true \
   LOG_LEVEL=DEBUG \
   LC_ALL=C \
 
-RUN ["apt install python-pip","pip install --upgrade pip","pip install monasca-agent==2.0.0","pip uninstall urllib3 -y","pip install urllib3==1.21.1"]
-# RUN ["apt install python-pip","pip install --upgrade pip","pip install monasca-agent"]
+RUN ["apt install python-pip","pip install --upgrade pip","pip install monasca-agent"]
+# RUN ["apt install python-pip","pip install --upgrade pip","pip install monasca-agent==2.0.0","pip uninstall urllib3 -y","pip install urllib3==1.21.1"]
+
 
 RUN adduser -S $AGENT_USER && \
     chown $AGENT_USER /etc/monasca/agent && \
