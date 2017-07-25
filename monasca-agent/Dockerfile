@@ -17,6 +17,8 @@ RUN apt-get update -y && \
      pip uninstall urllib3 -y && \
      pip install urllib3==1.21.1
 
-COPY start.sh /
+COPY start.sh /start.sh
+
+RUN ["chmod", "+x", "/start.sh”]
 
 CMD ./start.sh
