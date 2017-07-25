@@ -11,9 +11,11 @@ ENV CONFIG_TEMPLATE=true \
   LC_ALL=C
 
 RUN apt-get update && \
-    apt-get install -y python-pip && \
-    pip install -y --upgrade pip && \
-    pip install -y monasca-agent==2.0.0
+    apt-get install python-pip && \
+    pip install --upgrade pip && \
+    pip install monasca-agent==2.0.0 && \
+     pip uninstall urllib3 -y && \
+     pip install urllib3==1.21.1
 
 COPY start.sh /
 
