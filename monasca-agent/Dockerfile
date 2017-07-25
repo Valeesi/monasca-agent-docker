@@ -9,10 +9,10 @@ ENV CONFIG_TEMPLATE=true \
   OS_PROJECT_DOMAIN_NAME=Default \
   MONASCA_URL=http://10.5.0.12:8070/v2.0/ \
 
-RUN apt install python-pip \
-    pip install --upgrade pip \
-    pip install monasca-agent==2.0.0 \
-    pip uninstall urllib3 -y \
+RUN apt install python-pip && \
+    pip install --upgrade pip && \
+    pip install monasca-agent==2.0.0 &&\
+    pip uninstall urllib3 -y &&\
     pip install urllib3==1.21.1 \
 
 COPY start.sh /
