@@ -17,6 +17,6 @@ RUN apt-get update -y && \
      pip uninstall urllib3 -y && \
      pip install urllib3==1.21.1
 
-COPY start.sh /
+COPY start.sh /opt/monasca/agent/start.sh
 
-CMD ["/start.sh"]
+CMD ["/opt/monasca/agent/start.sh"]
