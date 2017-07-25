@@ -19,6 +19,6 @@ RUN apt-get update -y && \
 
 COPY start.sh /start.sh
 
-RUN ["chmod", "+x", "/start.sh”]
+RUN chmod +x /start.sh
 
 CMD ./start.sh
